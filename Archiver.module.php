@@ -390,7 +390,7 @@ class Archiver extends CMSModule
 			$current->SetTemplateId($restore->TemplateId());
 			$current->SetMenuText($restore->MenuText());
 			$tmp = $restore->Properties();
-			foreach ($tmp->mPropertyValues as $key=>$val)
+			foreach ($tmp as $key=>$val) //old: foreach ($tmp->mPropertyValues as $key=>$val)
 			{
 				$current->SetPropertyValue($key, $val);
 			}
@@ -410,7 +410,8 @@ class Archiver extends CMSModule
 		}
 		elseif ($params['type_id'] == $this->TYPE_HTMLBLOB)
 		{
-			$current = HtmlBlobOperations::LoadHtmlBlobByID($params['item_id']);
+			$gcbops = $gCms->GetGlobalContentOperations();
+			$current = $gcbops->LoadHtmlBlobByID($params['item_id']);
 			$current->name = $restore->name;
 			$current->content = $restore->content;
 			$current->Save();
@@ -780,6 +781,7 @@ class Archiver extends CMSModule
 		$gCms = cmsms();
 		$config = $gCms->GetConfig();
 		$templateops = $gCms->GetTemplateOperations();
+		$stylesheetops = $gCms->GetStyleSheetOperations();
 
 		$data["content_id"] = $contentobj->Id();
 		$data['content_type'] = $contentobj->Type();
@@ -792,7 +794,8 @@ class Archiver extends CMSModule
 		$templateobj = $templateops->LoadTemplateById($contentobj->TemplateId());
 		$data['template'] = $templateobj->content;
 
-		$stylesheetobj = get_stylesheet($contentobj->TemplateId());
+		//$stylesheetobj = get_stylesheet($contentobj->TemplateId());
+		$stylesheetobj = $stylesheetops->LoadStylesheetByID($contentobj->TemplateId());
 		$data['encoding'] = $stylesheetobj['encoding'];
 		$data['serialized_content'] = serialize($contentobj);
 
