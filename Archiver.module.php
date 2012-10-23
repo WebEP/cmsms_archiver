@@ -2,9 +2,10 @@
 #-------------------------------------------------------------------------
 # Module: Archiver - keep/roll-back historical versions of Content
 # Version: 0.2, Ted Kulp, SjG
+# Version: 0.2.5, Eric Pesser
 #
 #-------------------------------------------------------------------------
-# CMS - CMS Made Simple is (c) 2004-6 by Ted Kulp (ted@cmsmadesimple.org)
+# CMS - CMS Made Simple is (c) 2004-12 by Ted Kulp (ted@cmsmadesimple.org)
 # This project's homepage is: http://www.cmsmadesimple.org
 #
 #-------------------------------------------------------------------------
@@ -46,7 +47,7 @@ class Archiver extends CMSModule
 
 	function GetVersion()
 	{
-		return '0.2.4';
+		return '0.2.5';
 	}
 
 	function GetHelp()
@@ -86,7 +87,7 @@ class Archiver extends CMSModule
 
 	function MinimumCMSVersion()
 	{
-		return '1.9';
+		return '1.11.0';
 	}
 
 	function GetAdminDescription()
