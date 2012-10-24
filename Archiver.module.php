@@ -87,7 +87,7 @@ class Archiver extends CMSModule
 
 	function MinimumCMSVersion()
 	{
-		return '1.11.0';
+		return '1.11';
 	}
 
 	function GetAdminDescription()
