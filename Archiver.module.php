@@ -47,7 +47,7 @@ class Archiver extends CMSModule
 
 	function GetVersion()
 	{
-		return '0.2.5';
+		return '0.2.5.1';
 	}
 
 	function GetHelp()
