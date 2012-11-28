@@ -84,6 +84,8 @@ $lang['title_purge_warning2'] = 'Warning! Your selection takes effect the next t
 
 $lang['moddescription'] = 'Archive and restore Content, Style Sheets, Global Content Blocks, and Templates.';
 $lang['changelog'] = '<ul>
+<li>Version 0.2.6 - November 2012. Fixes error message with strict mode (PHP 5.3.8).</li>
+<li>Version 0.2.5.1 - October 2012. Fixes for modern versions of CMSMS.</li>
 <li>Version 0.2.4 - February 2011. Fixes for modern versions of CMSMS.</li>
 <li>Version 0.2.3 - July 2009. Fixed preview of Content archives.</li>
 <li>Version 0.2.2 - July 2009. Fix for restoring CSS and Templates. Now under 1.6.</li>

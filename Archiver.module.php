@@ -47,7 +47,7 @@ class Archiver extends CMSModule
 
 	function GetVersion()
 	{
-		return '0.2.5.1';
+		return '0.2.6';
 	}
 
 	function GetHelp()
@@ -115,7 +115,7 @@ class Archiver extends CMSModule
 		return $this->Lang('postuninstall');
 	}
 
-	function DoAction($action, $id, &$params, $return_id=-1)
+	function DoAction($action, $id, $params, $return_id='')
 	{
 		$this->DisplayAdminNav($id, $params, $return_id);
 		$this->TYPE_NAMES=array($this->TYPE_CONTENT=>$this->Lang('content'),
